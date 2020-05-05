@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux'; 
+import { createStore } from 'redux'; 
+import userReducer from './UserReducer'; 
+
 import {
   Platform, 
   StyleSheet,
@@ -6,13 +10,16 @@ import {
   Text,
 } from 'react-native';
 
+const store = createStore(userReducer)
 
 export default class App extends Component {
   render(){
     return (
-      <View style={styles.container}>
-        <Text style={styles.instructions}>Hello World!</Text>
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <Text style={styles.instructions}>Hello World!</Text>
+        </View>
+      </Provider>
     )
   }
 };
