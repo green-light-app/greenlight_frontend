@@ -1,6 +1,8 @@
+import { FAKE_ACTION } from './types'
+
 export const fakeAction = something => (
     {
-        type: 'WORDS', 
+        type: FAKE_ACTION, 
         payload: 'stuff'
     }
 )

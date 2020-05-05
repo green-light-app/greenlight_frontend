@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'; 
+import { FAKE_ACTION } from './types'
 
 const INITIAL_STATE = {
     currentUser: {}, 
@@ -6,7 +7,7 @@ const INITIAL_STATE = {
 
 const userReducer = (state = INITIAL_STATE, action) => {
     switch(action.type) {
-        case 'WORDS': 
+        case FAKE_ACTION: 
             const newState = {current, possible}; 
             return newState 
         default: 
