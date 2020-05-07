@@ -1,10 +1,17 @@
-import { createStackNavigator } from 'react-navigation';
-import Home from './Home';
-import Chat from './Chat';
+import { createStackNavigator } from '@react-navigation/stack';
+import * as React from 'react';
 
-const Navigator = createStackNavigator({
-    Home: { screen: Home }, 
-    Chat: { screen: Chat }
-}); 
+const Stack = createStackNavigator(); 
 
-export default Navigator;
+function MyStack(){
+    return (
+        <Stack.Navigator>
+            <Stack.Screen
+                name = "Home"
+                component = {Home}
+                options = {{title: 'Welcome'}}
+            />
+            <Stack.Screen name = "Chat" component = { Chat } />
+        </Stack.Navigator>
+    )
+}
