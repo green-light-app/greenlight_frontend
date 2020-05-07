@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux'; 
 import { createStore } from 'redux'; 
 import userReducer from './UserReducer'; 
+import Navigator from './Navigator';
 
 import {
   Platform, 
@@ -17,7 +18,7 @@ export default class App extends Component {
     return (
       <Provider store={store}>
         <View style={styles.container}>
-          <Text style={styles.instructions}>Hello World!</Text>
+          <Navigator/>
         </View>
       </Provider>
     )
