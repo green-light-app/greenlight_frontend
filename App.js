@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import 'react-native-gesture-handler';
+import { NavigationContainer } from 'react-navigation';
 import { Provider } from 'react-redux'; 
 import { createStore } from 'redux'; 
 import userReducer from './UserReducer'; 
@@ -16,11 +18,13 @@ const store = createStore(userReducer)
 export default class App extends Component {
   render(){
     return (
-      <Provider store={store}>
-        <View style={styles.container}>
-          <Navigator/>
-        </View>
-      </Provider>
+      <NavigationContainer>
+        <Provider store={store}>
+          <View style={styles.container}>
+            <Navigator/>
+          </View>
+        </Provider>
+      </NavigationContainer>
     )
   }
 };
